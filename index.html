@@ -1,0 +1,617 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prismatic — Spatial Visualization Studio</title>
+<meta name="description" content="Prismatic is a spatial visualization studio building cinematic 3D experiences, real-time engines, and AI-augmented environments for the world's most ambitious brands.">
+<meta property="og:title" content="Prismatic — Spatial Visualization Studio">
+<meta property="og:description" content="We craft worlds that bend light, logic & dimension. A spatial design practice in Lisbon, Tokyo & NYC.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070709">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ff5ea8'/><stop offset='.5' stop-color='%237c5cff'/><stop offset='1' stop-color='%233ec7ff'/></linearGradient></defs><path d='M16 2L28 22L4 22Z' fill='url(%23g)'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@300;400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<!-- =================== MOBILE NAV =================== -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#capabilities" class="mobile-nav-link">Capabilities</a>
+  <a href="#work" class="mobile-nav-link">Work</a>
+  <a href="#process" class="mobile-nav-link">Process</a>
+  <a href="#studio" class="mobile-nav-link">Studio</a>
+  <a href="#journal" class="mobile-nav-link">Journal</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+  <div class="mobile-nav-footer">
+    <a href="#">Instagram</a>
+    <a href="#">Are.na</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</div>
+
+<!-- =================== NAV =================== -->
+<nav class="top">
+  <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <div class="logo-mark">
+      <svg viewBox="0 0 32 32" fill="none">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff5ea8"/>
+            <stop offset=".5" stop-color="#7c5cff"/>
+            <stop offset="1" stop-color="#3ec7ff"/>
+          </linearGradient>
+        </defs>
+        <path d="M16 2 L28 22 L4 22 Z" fill="url(#lg1)" opacity=".9"/>
+        <path d="M16 2 L28 22 L4 22 Z" stroke="#fff" stroke-width=".5" fill="none" opacity=".4"/>
+        <circle cx="16" cy="16" r="3" fill="#fff" opacity=".85"/>
+      </svg>
+    </div>
+    Prismatic<span style="color:var(--ink-dim);font-family:var(--mono);font-size:11px;margin-left:4px;">®</span>
+  </div>
+  <div class="nav-links">
+    <a href="#work" data-num="01">Work</a>
+    <a href="#capabilities" data-num="02">Capabilities</a>
+    <a href="#process" data-num="03">Process</a>
+    <a href="#studio" data-num="04">Studio</a>
+    <a href="#journal" data-num="05">Journal</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="#contact" class="nav-cta open-contact">
+    <span class="dot"></span>
+    Start a Project
+  </a>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="prism-stage">
+    <canvas id="prism-canvas"></canvas>
+  </div>
+
+  <div class="hero-top">
+    <div class="hero-meta">
+      <span>Prismatic Studio</span>
+      <span>Est. 2019 — Lisbon · Tokyo · NYC</span>
+    </div>
+    <div class="hero-meta hero-coords">
+      <span>N 38.7223° W 9.1393°</span>
+      <span>Spatial Visualization · Real-time 3D · AI</span>
+    </div>
+  </div>
+
+  <div class="hero-center">
+    <div class="eyebrow">Volume 07 — A spatial design practice</div>
+    <h1 class="hero-title">
+      <div class="line"><span>We craft worlds</span></div>
+      <div class="line"><span>that bend <em>light</em>,</span></div>
+      <div class="line"><span>logic &amp; dimension.</span></div>
+    </h1>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-desc">
+      Prismatic is a <strong>spatial visualization studio</strong> building cinematic 3D experiences, real-time engines, and AI-augmented environments for the world's most ambitious brands.
+    </p>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-count="142">0</div>
+      <div class="hero-stat-label">Worlds Shipped</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num" data-count="28">0</div>
+      <div class="hero-stat-label">Global Partners</div>
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- =================== MARQUEE =================== -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Spatial Design</span>
+    <span>Real-time Rendering</span>
+    <span>Volumetric Light</span>
+    <span>AI Worldbuilding</span>
+    <span>Interactive Cinema</span>
+    <span>Holographic Identity</span>
+    <span>Spatial Design</span>
+    <span>Real-time Rendering</span>
+    <span>Volumetric Light</span>
+    <span>AI Worldbuilding</span>
+    <span>Interactive Cinema</span>
+    <span>Holographic Identity</span>
+  </div>
+</div>
+
+<!-- =================== CAPABILITIES =================== -->
+<section class="section" id="capabilities">
+  <div class="section-head reveal">
+    <div class="section-num"><span>01 / Capabilities</span><span>Four disciplines, one signal.</span></div>
+    <h2 class="section-title">A studio built for <em>spatial</em> stories — where engineering meets atmosphere.</h2>
+  </div>
+
+  <div class="cap-grid">
+    <div class="cap-card span-6 reveal">
+      <div class="visual holo-bg-1"></div>
+      <div class="content">
+        <div class="label">01 / Real-time 3D</div>
+        <h3>Engines that breathe.</h3>
+        <p>WebGL, WebGPU and Unreal pipelines for product configurators, immersive launches, and live spatial campaigns that render at sixty frames a thought.</p>
+      </div>
+      <svg class="geo-visual" viewBox="0 0 200 200" fill="none">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7c5cff"/><stop offset="1" stop-color="#3ec7ff"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(100 100)">
+          <circle r="70" stroke="url(#g1)" stroke-width="1" fill="none" opacity=".6"/>
+          <circle r="55" stroke="url(#g1)" stroke-width="1" fill="none" opacity=".5"/>
+          <circle r="40" stroke="url(#g1)" stroke-width="1" fill="none" opacity=".4"/>
+          <polygon points="0,-70 60,35 -60,35" stroke="url(#g1)" stroke-width="1.5" fill="none"/>
+          <polygon points="0,70 -60,-35 60,-35" stroke="url(#g1)" stroke-width="1.5" fill="none" opacity=".7"/>
+          <circle r="6" fill="#fff"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cap-card span-6 reveal reveal-delay-1">
+      <div class="visual holo-bg-2"></div>
+      <div class="content">
+        <div class="label">02 / Cinematic CGI</div>
+        <h3>Film-grade renders.</h3>
+        <p>Physically-based light, refraction studies, and editorial-quality stills for global campaigns. We treat every frame like a director's first cut.</p>
+      </div>
+      <svg class="geo-visual" viewBox="0 0 200 200" fill="none">
+        <defs>
+          <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff5ea8"/><stop offset="1" stop-color="#5bffb7"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(100 100)">
+          <rect x="-50" y="-50" width="100" height="100" stroke="url(#g2)" stroke-width="1" fill="none" transform="rotate(15)"/>
+          <rect x="-50" y="-50" width="100" height="100" stroke="url(#g2)" stroke-width="1" fill="none" transform="rotate(30)" opacity=".7"/>
+          <rect x="-50" y="-50" width="100" height="100" stroke="url(#g2)" stroke-width="1" fill="none" transform="rotate(45)" opacity=".5"/>
+          <rect x="-50" y="-50" width="100" height="100" stroke="url(#g2)" stroke-width="1" fill="none" transform="rotate(60)" opacity=".3"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cap-card span-4 reveal">
+      <div class="visual holo-bg-3"></div>
+      <div class="content">
+        <div class="label">03 / AI Spatial</div>
+        <h3>Generative environments.</h3>
+        <p>Trained diffusion pipelines for one-of-one worlds, props, and atmospheres.</p>
+      </div>
+      <svg class="geo-visual" viewBox="0 0 200 200" fill="none" style="width:120px;height:120px;">
+        <g transform="translate(100 100)">
+          <g stroke="#ffd166" stroke-width=".8" fill="none" opacity=".7">
+            <path d="M0,-60 Q40,-30 60,0 Q40,30 0,60 Q-40,30 -60,0 Q-40,-30 0,-60Z"/>
+            <path d="M0,-50 Q35,-25 50,0 Q35,25 0,50 Q-35,25 -50,0 Q-35,-25 0,-50Z" opacity=".7"/>
+            <path d="M0,-40 Q30,-20 40,0 Q30,20 0,40 Q-30,20 -40,0 Q-30,-20 0,-40Z" opacity=".5"/>
+          </g>
+          <circle r="4" fill="#ffd166"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cap-card span-4 reveal reveal-delay-1">
+      <div class="visual holo-bg-1"></div>
+      <div class="content">
+        <div class="label">04 / Brand Systems</div>
+        <h3>Identity in motion.</h3>
+        <p>Holographic identities, kinetic logos, and design tokens engineered for the spatial web.</p>
+      </div>
+      <svg class="geo-visual" viewBox="0 0 200 200" fill="none" style="width:130px;height:130px;">
+        <g transform="translate(100 100)">
+          <g fill="none" stroke-width="1">
+            <path d="M-50,-50 L50,-50 L50,50 L-50,50 Z" stroke="#ff5ea8"/>
+            <path d="M-50,-50 L50,-50 L50,50 L-50,50 Z" stroke="#7c5cff" transform="translate(8 8)" opacity=".7"/>
+            <path d="M-50,-50 L50,-50 L50,50 L-50,50 Z" stroke="#3ec7ff" transform="translate(16 16)" opacity=".4"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cap-card span-4 reveal reveal-delay-2">
+      <div class="visual holo-bg-2"></div>
+      <div class="content">
+        <div class="label">05 / Interactive Web</div>
+        <h3>The page as stage.</h3>
+        <p>Editorial sites, product worlds, and configurators that feel less like web and more like atmosphere.</p>
+      </div>
+      <svg class="geo-visual" viewBox="0 0 200 200" fill="none" style="width:120px;height:120px;">
+        <g transform="translate(100 100)" stroke="#5bffb7" stroke-width="1" fill="none">
+          <line x1="-60" y1="0" x2="60" y2="0"/>
+          <line x1="0" y1="-60" x2="0" y2="60"/>
+          <line x1="-42" y1="-42" x2="42" y2="42"/>
+          <line x1="-42" y1="42" x2="42" y2="-42"/>
+          <circle r="60" opacity=".4"/>
+          <circle r="40" opacity=".6"/>
+          <circle r="20" opacity=".8"/>
+          <circle r="4" fill="#5bffb7"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PORTFOLIO =================== -->
+<section class="portfolio" id="work">
+  <div class="section-head reveal">
+    <div class="section-num"><span>02 / Selected Work</span><span>2022 — 2026 archive</span></div>
+    <h2 class="section-title">Recent <em>worlds</em> we've built for clients quietly changing their industries.</h2>
+  </div>
+
+  <div class="work-list">
+    <div class="work-item reveal" data-img="aurora" data-project="aurora">
+      <div class="work-num">/ 01</div>
+      <div class="work-title">Aurora Labs <em>— Identity Engine</em></div>
+      <div class="work-tag">Real-time 3D · Brand</div>
+      <div class="work-year">2026 · Helsinki</div>
+      <div class="work-arrow">↗</div>
+    </div>
+    <div class="work-item reveal" data-img="meridian" data-project="meridian">
+      <div class="work-num">/ 02</div>
+      <div class="work-title">Meridian Watches <em>— Spatial Configurator</em></div>
+      <div class="work-tag">WebGPU · Product</div>
+      <div class="work-year">2025 · Geneva</div>
+      <div class="work-arrow">↗</div>
+    </div>
+    <div class="work-item reveal" data-img="vessel" data-project="vessel">
+      <div class="work-num">/ 03</div>
+      <div class="work-title">Vessel <em>— Generative Atelier</em></div>
+      <div class="work-tag">AI Spatial · Editorial</div>
+      <div class="work-year">2025 · Tokyo</div>
+      <div class="work-arrow">↗</div>
+    </div>
+    <div class="work-item reveal" data-img="halcyon" data-project="halcyon">
+      <div class="work-num">/ 04</div>
+      <div class="work-title">Halcyon Aerospace <em>— Visual System</em></div>
+      <div class="work-tag">CGI · Campaign</div>
+      <div class="work-year">2024 · Toulouse</div>
+      <div class="work-arrow">↗</div>
+    </div>
+    <div class="work-item reveal" data-img="oki" data-project="oki">
+      <div class="work-num">/ 05</div>
+      <div class="work-title">Okibi Beverages <em>— Liquid Studies</em></div>
+      <div class="work-tag">Cinematic 3D</div>
+      <div class="work-year">2024 · Kyoto</div>
+      <div class="work-arrow">↗</div>
+    </div>
+    <div class="work-item reveal" data-img="prism" data-project="prism">
+      <div class="work-num">/ 06</div>
+      <div class="work-title">Prism Capital <em>— Volumetric Dashboards</em></div>
+      <div class="work-tag">Data Spatial</div>
+      <div class="work-year">2023 · NYC</div>
+      <div class="work-arrow">↗</div>
+    </div>
+  </div>
+
+  <div class="work-preview" id="workPreview"></div>
+</section>
+
+<!-- =================== PROCESS / 3D =================== -->
+<section class="process" id="process">
+  <div class="section-head reveal" style="max-width:1400px;margin-left:auto;margin-right:auto;">
+    <div class="section-num"><span>03 / Process</span><span>Studio operating system</span></div>
+    <h2 class="section-title">From brief to <em>broadcast</em> — a four-act framework refined over a hundred projects.</h2>
+  </div>
+
+  <div class="process-stage">
+    <div class="process-3d">
+      <canvas id="object3d"></canvas>
+    </div>
+
+    <div class="process-steps">
+      <div class="step active" data-step="0">
+        <div class="step-num">/ 01</div>
+        <div>
+          <div class="step-title">Constellation</div>
+          <div class="step-desc">We map the territory — references, audiences, technical edges. A two-week intensive that ends with a single, brutal idea.</div>
+        </div>
+        <div class="step-icon">◐</div>
+      </div>
+      <div class="step" data-step="1">
+        <div class="step-num">/ 02</div>
+        <div>
+          <div class="step-title">Composition</div>
+          <div class="step-desc">Spatial storyboards, palette studies, motion language. Everything tested at half-resolution before a single render begins.</div>
+        </div>
+        <div class="step-icon">◑</div>
+      </div>
+      <div class="step" data-step="2">
+        <div class="step-num">/ 03</div>
+        <div>
+          <div class="step-title">Construction</div>
+          <div class="step-desc">In-engine builds, look development, and shader authoring. The studio becomes the dailies room for weeks.</div>
+        </div>
+        <div class="step-icon">◒</div>
+      </div>
+      <div class="step" data-step="3">
+        <div class="step-num">/ 04</div>
+        <div>
+          <div class="step-title">Cinema</div>
+          <div class="step-desc">Final pass, colour grade, and handover — be it a 4K master, a real-time bundle, or a fully deployable web world.</div>
+        </div>
+        <div class="step-icon">◓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TESTIMONIAL =================== -->
+<section class="quote-section reveal">
+  <blockquote class="q">
+    "Working with Prismatic felt less like hiring an agency and more like <span class="accent">commissioning a film crew that also happened to ship production code.</span>"
+  </blockquote>
+  <div class="q-attr">Sasha Volkov · Creative Director, Aurora Labs</div>
+</section>
+
+<!-- =================== STUDIO =================== -->
+<section class="studio-section" id="studio">
+  <div class="studio-inner">
+    <div class="section-head reveal" style="margin-bottom:0;">
+      <div class="section-num"><span>04 / Studio</span><span>Est. 2019 — Three continents</span></div>
+      <h2 class="section-title">We are a <em>small</em> studio with an outsized appetite for the impossible.</h2>
+    </div>
+
+    <div class="studio-grid">
+      <div class="studio-text reveal">
+        <p>Founded in Lisbon in 2019, Prismatic grew from a two-person experiment in real-time graphics into a <strong>twenty-two person collective</strong> spanning three cities and every timezone that matters.</p>
+        <p>We are not an agency. We are not a production house. We are a <strong>spatial practice</strong> — a group of engineers, directors, and material scientists who believe the browser is the most powerful canvas ever invented.</p>
+        <p>Every project begins with a single question: what would it look and feel like if this were a <strong>place</strong>, not just a page?</p>
+        <div class="studio-stats">
+          <div class="studio-stat">
+            <div class="studio-stat-num" data-count="22">0</div>
+            <div class="studio-stat-label">Team members</div>
+          </div>
+          <div class="studio-stat">
+            <div class="studio-stat-num" data-count="7">0</div>
+            <div class="studio-stat-label">Years in practice</div>
+          </div>
+          <div class="studio-stat">
+            <div class="studio-stat-num" data-count="3">0</div>
+            <div class="studio-stat-label">Studio cities</div>
+          </div>
+          <div class="studio-stat">
+            <div class="studio-stat-num" data-count="11">0</div>
+            <div class="studio-stat-label">Awards won</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-grid reveal reveal-delay-2">
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#7c5cff,#3ec7ff);">M</div>
+          <div class="team-name">Mia Chen</div>
+          <div class="team-role">Founding Director</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#ff5ea8,#ffd166);">K</div>
+          <div class="team-name">Kenji Tanaka</div>
+          <div class="team-role">3D Lead</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#5bffb7,#3ec7ff);">A</div>
+          <div class="team-name">Ana Sousa</div>
+          <div class="team-role">Creative Director</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#ffd166,#ff5ea8);">L</div>
+          <div class="team-name">Luca Bianchi</div>
+          <div class="team-role">Engineering Lead</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== JOURNAL =================== -->
+<section class="journal-section" id="journal">
+  <div class="section-head reveal">
+    <div class="section-num"><span>05 / Journal</span><span>Writing from the studio floor</span></div>
+    <h2 class="section-title">Thinking aloud on <em>craft</em>, code, and the future of spatial design.</h2>
+  </div>
+
+  <div class="journal-grid">
+    <div class="journal-card reveal open-journal" data-post="0">
+      <div class="journal-thumb">
+        <div class="journal-thumb-inner" style="background:linear-gradient(135deg,#0a1228,#7c5cff 50%,#3ec7ff);"></div>
+      </div>
+      <div class="journal-body">
+        <span class="journal-tag">Essay · 15 min</span>
+        <h3>On the materiality of light in real-time rendering</h3>
+        <p>What physically-based rendering gets right — and what it still fundamentally misunderstands about how humans perceive luminance and depth.</p>
+        <div class="journal-meta">
+          <span>Jan 2026</span>
+          <a class="read-link" href="#">Read ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="journal-card reveal reveal-delay-1 open-journal" data-post="1">
+      <div class="journal-thumb">
+        <div class="journal-thumb-inner" style="background:linear-gradient(135deg,#100a28,#3ec7ff 60%,#5bffb7);"></div>
+      </div>
+      <div class="journal-body">
+        <span class="journal-tag">Technical · 8 min</span>
+        <h3>How WebGPU changes everything we know about the browser</h3>
+        <p>A deep technical look at compute shaders, storage buffers, and why the gap between native and web 3D just quietly disappeared.</p>
+        <div class="journal-meta">
+          <span>Nov 2025</span>
+          <a class="read-link" href="#">Read ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="journal-card reveal reveal-delay-2 open-journal" data-post="2">
+      <div class="journal-thumb">
+        <div class="journal-thumb-inner" style="background:linear-gradient(135deg,#1a0f14,#ff5ea8 50%,#ffd166);"></div>
+      </div>
+      <div class="journal-body">
+        <span class="journal-tag">Think Piece · 10 min</span>
+        <h3>The spatial web is not VR: redefining presence for 2D screens</h3>
+        <p>Why the most profound spatial experiences of the next decade will not require a headset — and what that means for how we design them.</p>
+        <div class="journal-meta">
+          <span>Sep 2025</span>
+          <a class="read-link" href="#">Read ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CTA =================== -->
+<section class="cta" id="contact">
+  <div class="cta-bg"></div>
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">— Currently booking Q3 / Q4 2026 —</div>
+    <h2 class="cta-title">Let's build something that <em>refracts</em>.</h2>
+    <a href="#" class="cta-btn open-contact">
+      Start a project <span class="arr">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="foot-brand">
+    <div class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M16 2 L28 22 L4 22 Z" fill="url(#lg1)" opacity=".9"/>
+          <circle cx="16" cy="16" r="3" fill="#fff" opacity=".85"/>
+        </svg>
+      </div>
+      Prismatic
+    </div>
+    <p>A spatial visualization studio crafting cinematic 3D, real-time engines, and AI-augmented worlds for ambitious brands across three continents.</p>
+  </div>
+  <div class="foot-col">
+    <h4>Studio</h4>
+    <a href="#studio">About</a>
+    <a href="#studio">Team</a>
+    <a href="#journal">Journal</a>
+    <a href="#" class="open-contact">Press</a>
+  </div>
+  <div class="foot-col">
+    <h4>Work</h4>
+    <a href="#work">Case Studies</a>
+    <a href="#work">Reel 2026</a>
+    <a href="#work">Clients</a>
+    <a href="#work">Archive</a>
+  </div>
+  <div class="foot-col">
+    <h4>Contact</h4>
+    <a href="mailto:studio@prismatic.studio">studio@prismatic.studio</a>
+    <a href="tel:+351210984421">+351 21 098 4421</a>
+    <a href="#">Instagram ↗</a>
+    <a href="#">Are.na ↗</a>
+  </div>
+  <div class="foot-bottom">
+    <span>© Prismatic Studio MMXXVI — All worlds reserved</span>
+    <span>Built in Lisbon · v 7.2.1</span>
+  </div>
+</footer>
+
+<!-- =================== PROJECT MODAL =================== -->
+<div class="modal-overlay" id="projectOverlay">
+  <div class="proj-modal" id="projModal">
+    <button class="modal-close" id="projClose">✕</button>
+    <div class="modal-vis">
+      <div class="modal-vis-bg" id="modalVisBg"></div>
+      <div class="modal-vis-label" id="modalVisLabel"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-top-row">
+        <div class="modal-num" id="modalNum"></div>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-subtitle" id="modalSubtitle"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-stats" id="modalStats"></div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CONTACT MODAL =================== -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" id="contactClose">✕</button>
+    <div class="contact-modal-body">
+      <div class="contact-form-inner" id="contactFormInner">
+        <div class="contact-title">Start a project.</div>
+        <div class="contact-sub">Tell us about what you're building. We'll get back within 48 hours — usually much sooner.</div>
+        <form id="contactForm" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your name</label>
+              <input type="text" name="name" placeholder="Ada Lovelace" required />
+            </div>
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="email" name="email" placeholder="ada@studio.io" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Project type</label>
+            <select name="type" required>
+              <option value="" disabled selected>Select a discipline</option>
+              <option>Real-time 3D / WebGL</option>
+              <option>Cinematic CGI / Campaign</option>
+              <option>AI Spatial Environment</option>
+              <option>Brand Identity System</option>
+              <option>Interactive Web Experience</option>
+              <option>Something else entirely</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estimated budget</label>
+            <select name="budget" required>
+              <option value="" disabled selected>Select a range</option>
+              <option>€25k – €60k</option>
+              <option>€60k – €150k</option>
+              <option>€150k – €400k</option>
+              <option>€400k+</option>
+              <option>Let's talk first</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell us about the project</label>
+            <textarea name="message" rows="4" placeholder="What are you building, and what should it feel like?"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send enquiry →</button>
+        </form>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">◈</div>
+        <h3>Message received.</h3>
+        <p>We've got your brief and we'll be in touch within 48 hours. In the meantime, feel free to explore our archive of work — there's plenty more to see.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== BACK TO TOP =================== -->
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
+
